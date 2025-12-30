@@ -1,0 +1,17 @@
+{
+  "category": "Practices",
+  "order": 6,
+  "skills": [
+    "Agile Development",
+    "Scrum",
+    "Test-Driven Development",
+    "CI/CD",
+    "Code Review",
+    "Design Patterns",
+    "SOLID Principles",
+    "Clean Code",
+    "Responsive Design",
+    "Performance Optimization"
+  ]
+}
+

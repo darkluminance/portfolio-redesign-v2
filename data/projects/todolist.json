@@ -1,0 +1,18 @@
+{
+  "name": "Todo-list app",
+  "slug": "todolist",
+  "category": "Web Development",
+  "year": 2022,
+  "description": "A todo list app that resets every day",
+  "githubURL": "https://github.com/darkluminance/Todo-list-app---ReactJS",
+  "demoURL": "https://rye013.netlify.app/project-releases/todolist-app",
+  "stacks": ["ReactJS"],
+  "image": {
+    "version": 1696683376,
+    "public_id": "projects/todolist",
+    "format": "png",
+    "width": 895,
+    "height": 895
+  }
+}
+

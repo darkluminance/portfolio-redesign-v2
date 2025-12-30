@@ -1,0 +1,18 @@
+{
+  "name": "TrackGrad",
+  "slug": "trackgrad",
+  "category": "Web Development",
+  "year": 2025,
+  "description": "A management tool that allows users to track their higher studies application journey, with a middleware to prevent unauthorized API access, and a mail notification service to notify users of important events via mail. It is deployed in an AWS EC2 instance hosted using Docker.",
+  "githubURL": "https://github.com/darkluminance/higher-studies-application-tracker",
+  "demoURL": "http://15.206.127.42:3000",
+  "stacks": ["Solid.JS", "Go", "PostgreSQL", "Docker", "AWS"],
+  "image": {
+    "version": 1737386347,
+    "public_id": "projects/trackgrad",
+    "format": "png",
+    "width": 1080,
+    "height": 1080
+  }
+}
+

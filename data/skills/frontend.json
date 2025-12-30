@@ -1,0 +1,16 @@
+{
+  "category": "Frontend",
+  "order": 2,
+  "skills": [
+    "React",
+    "Next.js",
+    "Vue",
+    "Nuxt.js",
+    "SASS",
+    "Tailwind CSS",
+    "Bootstrap",
+    "Material UI",
+    "Three.js"
+  ]
+}
+

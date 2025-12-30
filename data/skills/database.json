@@ -1,0 +1,12 @@
+{
+  "category": "Database",
+  "order": 4,
+  "skills": [
+    "PostgreSQL",
+    "MySQL",
+    "MongoDB",
+    "Firebase",
+    "Prisma"
+  ]
+}
+

@@ -1,0 +1,14 @@
+{
+  "company": "Enosis Solutions",
+  "position": "Software Engineer II",
+  "location": "Dhaka, Bangladesh",
+  "startDate": "March 2025",
+  "endDate": "Present",
+  "highlights": [
+    "Architected and optimized movement and alignment systems for a multi-platform (AR/VR/Web) 3D SaaS AR/VR product using Three.js and Node.js",
+    "Enhanced controller-picking and rendering algorithms, improving performance by 5x across VR/AR modes",
+    "Contributed to a Python (Django)-React-based dental management application, focusing on logging, deployment, code cleaning, and feature development"
+  ],
+  "stacks": ["Three.js", "Node.js", "Python", "Django", "React", "AWS", "Tailwind CSS", "AR/VR"]
+}
+
