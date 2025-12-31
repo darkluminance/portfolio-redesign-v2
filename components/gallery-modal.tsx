@@ -82,6 +82,7 @@ export function GalleryModal({ images }: GalleryModalProps) {
               sizes="100vw"
               className="object-contain relative z-10"
               onLoad={() => setIsImageLoading(false)}
+              unoptimized
             />
           </div>
         </div>

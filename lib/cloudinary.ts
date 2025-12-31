@@ -11,6 +11,8 @@ export const CLOUDINARY_BASE_URL = `https://res.cloudinary.com/${CLOUDINARY_CLOU
 
 export const CLOUDINARY_GALLERY_LIST_URL = `${CLOUDINARY_BASE_URL}/image/list/gallery-xl.json`;
 
+export const CLOUDINARY_DIGITAL_ARTS_LIST_URL = `${CLOUDINARY_BASE_URL}/image/list/arts.json`;
+
 export function buildCloudinaryImageUrl(
   version: number,
   publicId: string,

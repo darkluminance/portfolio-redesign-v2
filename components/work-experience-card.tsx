@@ -34,10 +34,10 @@ export function WorkExperienceCard({ experience }: WorkExperienceCardProps) {
       </ul>
       
       <div className="flex flex-wrap items-center gap-x-2 text-sm text-muted-foreground">
-        {experience.stacks.map((stack) => (
+        <span>Skills: </span>
+        {experience.stacks.map((stack, index) => (
           <span key={stack} className="flex items-center gap-2">
-            <span>-</span>
-            <span>{stack}</span>
+            <span>{stack}{index < experience.stacks.length - 1 ? ',' : ''}</span>
           </span>
         ))}
       </div>

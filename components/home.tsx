@@ -13,7 +13,7 @@ export default function Home() {
   const skills = getSkills();
 
   const age = useMemo(() => {
-    const dateOfBirth = new Date(1998, 7, 23);
+    const dateOfBirth = new Date(2000, 7, 23);
     const currentDate = new Date();
     const age = Math.abs(
       Math.floor(
@@ -31,7 +31,7 @@ export default function Home() {
         <div className="md:mt-12 lg:mt-24 flex flex-col-reverse items-center gap-12 sm:flex-row sm:justify-between">
           <div className="flex flex-col gap-4">
             <div className="text-3xl md:text-4xl font-[400] uppercase">
-              <h1>Raiyan Abrar,</h1>
+              <h1>Raiyan Abrar</h1>
             </div>
             <div className="flex flex-col gap-2 text-lg text-muted-foreground">
               <h3 className="flex items-center gap-2">
@@ -55,8 +55,8 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-col gap-8 leading-loose">
-          <p>I'm a {age} year old developer currently working at <UnderlineLink href="https://www.enosisbd.com/">Enosis Solutions</UnderlineLink>. I have coded <HighlightText>scaleable web applications</HighlightText>, <HighlightText>designed</HighlightText> products, built <HighlightText>APIs</HighlightText>, led cross-functional <HighlightText>teams</HighlightText> and made various types of <HighlightText>games</HighlightText>.</p>
-          <p>I love to <HighlightText>travel</HighlightText>, especially to the <HighlightText>mountains</HighlightText>. I own a <UnderlineLink href="https://www.sony.com/ng/electronics/interchangeable-lens-cameras/ilce-6400a">Sony-A6400</UnderlineLink> that frames my passion towards <UnderlineLink href="/gallery">photography</UnderlineLink>. I am a fan of video-games and anime. My big dream is to someday own a <HighlightText>cat</HighlightText>.</p>
+          <p>I'm a {age} year old developer currently working at <UnderlineLink href="https://www.enosisbd.com/">Enosis Solutions</UnderlineLink>. I have coded <HighlightText>scaleable web applications</HighlightText>, <HighlightText>designed</HighlightText> products, built <HighlightText>APIs</HighlightText>, <HighlightText>led</HighlightText> cross-functional <HighlightText>teams</HighlightText> and made various types of <HighlightText>games</HighlightText>.</p>
+          <p>I love to <HighlightText>travel</HighlightText>, especially to the <HighlightText>mountains</HighlightText>. I own a <UnderlineLink href="https://www.sony.com/ng/electronics/interchangeable-lens-cameras/ilce-6400a">Sony-A6400</UnderlineLink> that frames my passion towards <UnderlineLink href="/gallery">photography</UnderlineLink>. I also occasionally do <UnderlineLink href="/digital-arts">digital arts</UnderlineLink>. I am a fan of video-games and anime. My big dream is to someday own a <HighlightText>cat</HighlightText>.</p>
           <span className="flex items-center gap-2">- A Coffee Lover<CoffeeIcon className="h-5 w-5 inline-block text-muted-foreground" /> </span>
         </div>
         <div className="flex items-center gap-8 mb-16">

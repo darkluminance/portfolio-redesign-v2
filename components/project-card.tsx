@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Project, getCloudinaryUrl } from "@/lib/projects";
+import { Project, getCloudinaryUrl } from "@/lib/project-types";
 
 interface ProjectCardProps {
   project: Project;

@@ -1,5 +1,5 @@
 import { getProjects } from "@/lib/projects";
-import { ProjectCard } from "@/components/project-card";
+import { ProjectsClient } from "@/components/projects-client";
 
 export const revalidate = 86400;
 
@@ -14,11 +14,7 @@ export default function ProjectsPage() {
           A collection of things I&apos;ve built over the years
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {projects.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
-        ))}
-      </div>
+      <ProjectsClient projects={projects} />
     </div>
   );
 }

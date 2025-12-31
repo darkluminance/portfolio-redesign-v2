@@ -1,27 +1,10 @@
 import fs from "fs";
 import path from "path";
 import { cache } from "react";
-import { buildCloudinaryImageUrl } from "./cloudinary";
+import { Project } from "./project-types";
 
-export interface ProjectImage {
-  version: number;
-  public_id: string;
-  format: string;
-  width: number;
-  height: number;
-}
-
-export interface Project {
-  name: string;
-  slug: string;
-  category: string;
-  year: number;
-  description: string;
-  githubURL: string;
-  demoURL: string;
-  stacks: string[];
-  image: ProjectImage;
-}
+export type { Project, ProjectImage } from "./project-types";
+export { getCloudinaryUrl } from "./project-types";
 
 const projectsDirectory = path.join(process.cwd(), "data/projects");
 
@@ -55,12 +38,3 @@ export const getAllSlugs = cache((): string[] => {
     .filter((fileName) => fileName.endsWith(".json"))
     .map((fileName) => fileName.replace(/\.json$/, ""));
 });
-
-export function getCloudinaryUrl(image: ProjectImage, width: number = 600): string {
-  return buildCloudinaryImageUrl(
-    image.version,
-    image.public_id,
-    image.format,
-    `c_thumb,w_${width}`
-  );
-}
