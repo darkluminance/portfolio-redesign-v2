@@ -1,0 +1,66 @@
+export const favoriteGames = [
+  "Clair Obscur: Expedition 33 (The GOAT)",
+  "Ghost of Tsushima",
+  "Pokemon: Legends Arceus",
+  "Super Hexagon",
+  "Spiderman Remastered",
+  "Legends of Zelda: Tears of the Kingdom",
+  "NieR: Automata",
+  "FIFA 14",
+  "Dragon Ball Z: Buu's Fury",
+  "Pokemon Emerald",
+];
+
+export const currentlyPlaying = [
+  "Pokemon: Legends ZA",
+  "Red Dead Redemption 2",
+  "Cities: Skylines 2",
+  "Minecraft",
+];
+
+export const alsoPlayed = [
+  "Split Fiction",
+  "Horizon Forbidden West",
+  "Horizon Zero Dawn",
+  "Legends of Zelda: Breath of the Wild",
+  "Celeste",
+  "Valorant",
+  "Dota 2",
+  "Civilization V",
+  "Dragon Ball Sparking Zero",
+  "Dragon Ball Xenoverse 2",
+  "Dragon Ball Xenoverse",
+  "Portal 2",
+  "Inside",
+  "Spiderman 2",
+  "Spider-Man: Miles Morales",
+  "Hogwarts Legacy",
+  "Pokemon Scarlet and Violet",
+  "Pokemon Sword and Shield",
+  "Pokemon Omega Ruby and Alpha Sapphire",
+  "Pokemon Black and White 2",
+  "Pokemon Black and White",
+  "Pokemon FireRed",
+  "Pokemon Crystal",
+  "Pokemon Yellow",
+  "Forza Horizon 4",
+  "FIFA 22",
+  "FIFA 18",
+  "Call of Duty: Black Ops",
+];
+
+export const wishToPlay = [
+  "Ghost of Yotei",
+  "Black Myth: Wukong",
+  "Skyrim",
+  "Elden Ring",
+  "Undertale",
+  "No Man's Sky",
+  "Ori and the Blind Forest",
+  "Ori and the Will of the Wisps",
+  "Firewatch",
+  "A Plague Tale: Innocence",
+  "Silent Hill F",
+  "Assassin's Creed Black Flag",
+];
+
