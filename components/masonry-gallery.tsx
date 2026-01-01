@@ -16,18 +16,12 @@ interface MasonryImage {
 
 interface MasonryGalleryProps {
   images: MasonryImage[];
-  columns?: {
-    sm?: number;
-    md?: number;
-    lg?: number;
-  };
+  columnClasses?: string;
 }
 
-export function MasonryGallery({ images, columns = { sm: 1, md: 2, lg: 3 } }: MasonryGalleryProps) {
+export function MasonryGallery({ images, columnClasses = "columns-1 md:columns-2 lg:columns-3" }: MasonryGalleryProps) {
   const [selectedImage, setSelectedImage] = useState<MasonryImage | null>(null);
   const [isImageLoading, setIsImageLoading] = useState(false);
-
-  const columnClasses = `columns-${columns.sm ?? 1} md:columns-${columns.md ?? 2} lg:columns-${columns.lg ?? 3}`;
 
   return (
     <>

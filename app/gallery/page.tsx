@@ -2,7 +2,8 @@ import {
   CLOUDINARY_GALLERY_LIST_URL,
   buildCloudinaryImageUrl,
 } from "@/lib/cloudinary";
-import { GalleryModal } from "@/components/gallery-modal";
+import {MasonryGallery} from "@/components/masonry-gallery";
+import {getMasonryColumns} from "@/lib/utils";
 
 interface CloudinaryResource {
   public_id: string;
@@ -64,12 +65,14 @@ export default async function GalleryPage() {
     thumbnailUrl: getThumbnailURL(resource),
     fullUrl: getFullURL(resource),
     alt: resource.public_id.slice(11),
+    width: resource.width,
+    height: resource.height,
   }));
 
   return (
     <div className="md:py-8">
       <h1 className="text-3xl font-bold mb-8">My Photographs</h1>
-      <GalleryModal images={images} />
+      <MasonryGallery images={images} columnClasses={getMasonryColumns({ sm: 1, md: 2, lg: 3 })} />
     </div>
   );
 }

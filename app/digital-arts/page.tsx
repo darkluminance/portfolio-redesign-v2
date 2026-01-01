@@ -3,6 +3,7 @@ import {
   buildCloudinaryImageUrl,
 } from "@/lib/cloudinary";
 import { MasonryGallery } from "@/components/masonry-gallery";
+import { getMasonryColumns } from "@/lib/utils";
 
 interface CloudinaryResource {
   public_id: string;
@@ -71,7 +72,7 @@ export default async function DigitalArtsPage() {
   return (
     <div className="md:py-8">
       <h1 className="text-3xl font-bold mb-8">Digital Arts</h1>
-      <MasonryGallery images={images} columns={{ sm: 1, md: 2, lg: 2 }} />
+      <MasonryGallery images={images} columnClasses={getMasonryColumns({ sm: 1, md: 2, lg: 2 })} />
     </div>
   );
 }
