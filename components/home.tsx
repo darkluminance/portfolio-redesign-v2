@@ -7,6 +7,7 @@ import { HighlightText } from "@/components/highlight-text";
 import { getWorkExperiences } from "@/lib/work-experience";
 import { WorkExperienceCard } from "@/components/work-experience-card";
 import { getSkills } from "@/lib/skills";
+import {Badge} from "./ui/badge";
 
 export default function Home() {
   const workExperiences = getWorkExperiences();
@@ -64,7 +65,7 @@ export default function Home() {
             href="https://linkedin.com/in/rye013"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground transition-colors hover:text-foreground"
+            className="text-muted-foreground transition-colors hover:text-foreground hover:transform-[scale(1.1)]"
           >
             <Linkedin className="h-5 w-5" />
             <span className="sr-only">LinkedIn</span>
@@ -73,14 +74,14 @@ export default function Home() {
             href="https://github.com/darkluminance"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground transition-colors hover:text-foreground"
+            className="text-muted-foreground transition-colors hover:text-foreground hover:transform-[scale(1.1)]"
           >
             <Github className="h-5 w-5" />
             <span className="sr-only">GitHub</span>
           </Link>
           <Link
             href="mailto:raiyan.abrar1308@gmail.com"
-            className="text-muted-foreground transition-colors hover:text-foreground"
+            className="text-muted-foreground transition-colors hover:text-foreground hover:transform-[scale(1.1)]"
           >
             <Mail className="h-5 w-5" />
             <span className="sr-only">Email</span>
@@ -89,7 +90,7 @@ export default function Home() {
             href="https://instagram.com/ryedae.jpg"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground transition-colors hover:text-foreground"
+            className="text-muted-foreground transition-colors hover:text-foreground hover:transform-[scale(1.1)]"
           >
             <Instagram className="h-5 w-5" />
             <span className="sr-only">Instagram</span>
@@ -112,9 +113,9 @@ export default function Home() {
           {skills.map((skillCategory) => (
             <div key={skillCategory.category} className="flex flex-col gap-2">
               <h3 className="text-lg font-bold">{skillCategory.category}</h3>
-              <div className="flex flex-wrap items-center gap-x-2 text-sm text-muted-foreground">
+              <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
                 {skillCategory.skills.map((skill) => (
-                  <span key={skill}>{skill} |</span>
+                  <Badge key={skill} variant="outline" className="cursor-pointer hover:bg-muted hover:text-muted-foreground transition-all duration-300">{skill}</Badge>
                 ))}
               </div>
             </div>

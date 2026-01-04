@@ -19,6 +19,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
   { href: "/gallery", label: "Gallery" },
+  { href: "/resume-builder", label: "Resume Builder" },
 ];
 
 export default function Topbar() {
@@ -43,7 +44,7 @@ export default function Topbar() {
         />
       </Link>
 
-      <nav className="hidden items-center gap-6 md:flex">
+      <nav className="hidden items-center gap-4 md:flex">
         {navLinks.map((link) => {
           const isActive = pathname === link.href;
           return (
@@ -51,8 +52,8 @@ export default function Topbar() {
               key={link.href}
               href={link.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-muted-foreground",
-                isActive ? "text-nav-active" : "text-foreground"
+                "text-sm font-medium transition-colors hover:text-muted-foreground hover:underline transition-all duration-1000",
+                isActive ? "text-nav-active underline" : "text-foreground"
               )}
             >
               {link.label}

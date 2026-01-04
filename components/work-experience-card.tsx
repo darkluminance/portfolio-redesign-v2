@@ -1,4 +1,5 @@
 import { WorkExperience } from "@/lib/work-experience";
+import {Badge} from "./ui/badge";
 
 interface WorkExperienceCardProps {
   experience: WorkExperience;
@@ -33,12 +34,9 @@ export function WorkExperienceCard({ experience }: WorkExperienceCardProps) {
         ))}
       </ul>
       
-      <div className="flex flex-wrap items-center gap-x-2 text-sm text-muted-foreground">
-        <span>Skills: </span>
+      <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
         {experience.stacks.map((stack, index) => (
-          <span key={stack} className="flex items-center gap-2">
-            <span>{stack}{index < experience.stacks.length - 1 ? ',' : ''}</span>
-          </span>
+          <Badge key={stack} variant="secondary" className="cursor-pointer hover:bg-muted hover:text-muted-foreground transition-all duration-300">{stack}</Badge>
         ))}
       </div>
     </div>

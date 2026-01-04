@@ -1,3 +1,4 @@
+@import url("https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@master/fonts.css");
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -125,11 +126,18 @@
   --nav-active: oklch(0.65 0.01 56);
 }
 
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .resume-section-title {
+    @apply text-sm uppercase mb-1 border-b border-black;
   }
 }

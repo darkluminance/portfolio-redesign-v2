@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
-import Topbar from "@/components/topbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { LayoutWrapper } from "@/components/layout-wrapper";
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
@@ -33,10 +33,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider>
-          <div className="mx-auto max-w-[800px] px-6 leading-relaxed tracking-wide">
-            <Topbar />
-            <main className="py-8">{children}</main>
-          </div>
+          <LayoutWrapper>{children}</LayoutWrapper>
           <ThemeToggle />
         </ThemeProvider>
       </body>
