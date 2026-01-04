@@ -36,6 +36,23 @@ export const projects: Project[] = [
     }
   },
   {
+    name: "Resume Builder",
+    slug: "resume_builder",
+    category: "Web Development",
+    year: 2026,
+    description: "A web application that allows users to build professional resumes with customizable sections including personal information, work experience, skills, projects, education, and custom sections. Features real-time preview and PDF export via LaTeX compilation.",
+    githubURL: "https://github.com/darkluminance/portfolio-redesign-v2",
+    demoURL: "https://raiyanabrar.netlify.app/resume-builder",
+    stacks: ["NextJS", "TypeScript", "TailwindCSS", "Shadcn UI"],
+    image: {
+      version: 1767532548,
+      public_id: "projects/resume_builder_ktambd",
+      format: "png",
+      width: 1080,
+      height: 1080
+    }
+  },
+  {
     name: "TrackGrad",
     slug: "trackgrad",
     category: "Web Development",
