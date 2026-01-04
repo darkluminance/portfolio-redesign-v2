@@ -64,17 +64,18 @@ export function DownloadButton({ data, fileName }: DownloadButtonProps) {
             variant="outline"
             size="sm"
             disabled={isGenerating}
-            className="flex items-center gap-2 rounded-none border-primary/50 text-foreground hover:bg-primary/5 hover:text-primary"
+            className="flex items-center gap-2 rounded-none border-primary/50 text-foreground hover:bg-primary/5 hover:text-primary flex-shrink-0"
         >
             {isGenerating ? (
                 <>
                     <Loader2 className="h-4 w-4 animate-spin" />
-                    <span>{status || "Generating..."}</span>
+                    <span className="hidden sm:inline">{status || "Generating..."}</span>
                 </>
             ) : (
                 <>
                     <Download className="h-4 w-4" />
-                    <span>Download PDF</span>
+                    <span className="hidden sm:inline">Download PDF</span>
+                    <span className="sm:hidden">Download</span>
                 </>
             )}
         </Button>

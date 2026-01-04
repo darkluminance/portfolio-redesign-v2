@@ -62,15 +62,15 @@ export default function ResumeBuilderPage() {
     const [resumeData, setResumeData] = useState<ResumeData>(createEmptyResumeData());
 
     return (
-        <div className="flex h-screen flex-col">
-            <div className="flex items-center justify-between border-b border-border bg-background p-4">
+        <div className="flex min-h-screen flex-col gap-4">
+            <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2">
+                <Home className="h-4 w-4" /> <span className="text-sm">Go back Home</span>
+            </Link>
+            <div className="flex flex-col gap-4 border-b border-border bg-background py-4 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex flex-col gap-3">
-                    <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2">
-                        <Home className="h-4 w-4" /> <span className="text-sm">Go back Home</span>
-                    </Link>
                     <h1 className="text-xl font-semibold">Resume Builder</h1>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                     <PresetManager
                         data={resumeData}
                         onLoad={(data) => setResumeData(data)}
@@ -82,9 +82,9 @@ export default function ResumeBuilderPage() {
                 </div>
             </div>
 
-            <div className="flex flex-1 overflow-hidden">
-                <div className="w-full lg:w-1/2 overflow-y-auto border-r border-border bg-background">
-                    <div className="p-4 space-y-2">
+            <div className="flex flex-1 flex-col overflow-hidden lg:flex-row">
+                <div className="w-full overflow-y-auto border-r-0 border-b border-border bg-background lg:w-1/2 lg:border-r lg:border-b-0">
+                    <div className="p-3 space-y-2 sm:p-4">
                     <CollapsibleSection
                         title="Personal Information"
                         icon={<User className="h-4 w-4 text-muted-foreground" />}
@@ -180,7 +180,7 @@ export default function ResumeBuilderPage() {
                     <div className="sticky top-0 z-10 flex items-center justify-between border-b border-border bg-background p-4">
                         <h2 className="text-sm font-medium text-muted-foreground">Preview</h2>
                     </div>
-                    <div className="flex-1 overflow-y-auto p-8 flex justify-center">
+                    <div className="flex-1 overflow-y-auto p-4 flex justify-center xl:p-8">
                         <div className="w-full max-w-[210mm] shadow-lg">
                             <ResumePreview data={resumeData} />
                         </div>

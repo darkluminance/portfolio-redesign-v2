@@ -69,20 +69,22 @@ export function PresetManager({ data, onLoad }: PresetManagerProps) {
     };
 
     return (
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
             <Button
                 onClick={() => setSaveDialogOpen(true)}
                 variant="outline"
                 size="sm"
+                className="flex-shrink-0"
             >
-                <Save className="h-3.5 w-3.5 mr-1.5" />
-                Save Preset
+                <Save className="h-3.5 w-3.5 sm:mr-1.5" />
+                <span className="hidden sm:inline">Save Preset</span>
+                <span className="sm:hidden">Save</span>
             </Button>
 
             {presets.length > 0 && (
                 <>
                     <Select value={selectedPresetId} onValueChange={setSelectedPresetId}>
-                        <SelectTrigger className="w-[180px]">
+                        <SelectTrigger className="w-[140px] sm:w-[180px]">
                             <SelectValue placeholder="Load preset..." />
                         </SelectTrigger>
                         <SelectContent>
@@ -99,6 +101,7 @@ export function PresetManager({ data, onLoad }: PresetManagerProps) {
                                 onClick={handleLoad}
                                 variant="default"
                                 size="sm"
+                                className="flex-shrink-0"
                             >
                                 Load
                             </Button>
@@ -106,6 +109,7 @@ export function PresetManager({ data, onLoad }: PresetManagerProps) {
                                 onClick={() => handleDelete(selectedPresetId)}
                                 variant="outline"
                                 size="sm"
+                                className="flex-shrink-0"
                             >
                                 <Trash2 className="h-3.5 w-3.5" />
                             </Button>
