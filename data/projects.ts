@@ -53,6 +53,23 @@ export const projects: Project[] = [
     }
   },
   {
+    name: "Data Structures and Algorithm Visualizer",
+    slug: "dsa-visualizer",
+    category: "Web Development",
+    year: 2026,
+    description: "An interactive web application for visualizing common data structures and algorithms. Built with React, TypeScript, and modern web technologies to help students and developers understand how algorithms work through step-by-step animations.",
+    githubURL: "https://github.com/darkluminance/Data-Structures-and-Algorithm-Visualizer",
+    demoURL: "https://raiyanabrar-dsalgo.netlify.app",
+    stacks: ["React", "TypeScript", "TailwindCSS", "Shadcn UI"],
+    image: {
+      version: 1767800586,
+      public_id: "projects/dsalgo_visualizer_mmqodp",
+      format: "png",
+      width: 1080,
+      height: 1080
+    }
+  },
+  {
     name: "TrackGrad",
     slug: "trackgrad",
     category: "Web Development",
