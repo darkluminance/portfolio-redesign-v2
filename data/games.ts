@@ -12,7 +12,7 @@ export const favoriteGames = [
 ];
 
 export const currentlyPlaying = [
-  "Pokemon: Legends ZA",
+  "Hytale",
   "Red Dead Redemption 2",
   "Cities: Skylines 2",
   "Minecraft",
@@ -35,6 +35,7 @@ export const alsoPlayed = [
   "Spiderman 2",
   "Spider-Man: Miles Morales",
   "Hogwarts Legacy",
+  "Pokemon: Legends ZA",
   "Pokemon Scarlet and Violet",
   "Pokemon Sword and Shield",
   "Pokemon Omega Ruby and Alpha Sapphire",
