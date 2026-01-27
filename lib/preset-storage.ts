@@ -48,3 +48,18 @@ export function deletePreset(id: string): boolean {
     return filtered.length < presets.length;
 }
 
+export function findPresetByName(name: string): Preset | null {
+    const presets = getPresets();
+    return presets.find((p) => p.name.toLowerCase() === name.toLowerCase().trim()) || null;
+}
+
+export function updatePreset(id: string, data: ResumeData): void {
+    const presets = getPresets();
+    const index = presets.findIndex((p) => p.id === id);
+    if (index !== -1) {
+        presets[index].data = data;
+        presets[index].createdAt = new Date().toISOString();
+        localStorage.setItem(PRESET_STORAGE_KEY, JSON.stringify(presets));
+    }
+}
+

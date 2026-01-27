@@ -1,5 +1,46 @@
 import { ResumeData } from "./resume-types";
 
+function parseFormatting(text: string): string {
+    if (!text) return "";
+    
+    let result = text;
+    
+    result = result.replace(/\*\*(.+?)\*\*/g, (_, content) => {
+        return `\\textbf{${escapeLatex(content)}}`;
+    });
+    
+    result = result.replace(/__(.+?)__/g, (_, content) => {
+        return `\\underline{${escapeLatex(content)}}`;
+    });
+    
+    result = result.replace(/~~(.+?)~~/g, (_, content) => {
+        return `\\emph{${escapeLatex(content)}}`;
+    });
+    
+    result = result.replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, (_, content) => {
+        return `\\textit{${escapeLatex(content)}}`;
+    });
+    
+    const parts: string[] = [];
+    let lastIndex = 0;
+    const latexCommandRegex = /\\(textbf|underline|emph|textit)\{[^}]*\}/g;
+    let match;
+    
+    while ((match = latexCommandRegex.exec(result)) !== null) {
+        if (match.index > lastIndex) {
+            parts.push(escapeLatex(result.substring(lastIndex, match.index)));
+        }
+        parts.push(match[0]);
+        lastIndex = match.index + match[0].length;
+    }
+    
+    if (lastIndex < result.length) {
+        parts.push(escapeLatex(result.substring(lastIndex)));
+    }
+    
+    return parts.join('');
+}
+
 function escapeLatex(text: string): string {
     if (!text) return "";
     return text
@@ -26,14 +67,14 @@ function generateHeading(personalInfo: ResumeData["personalInfo"]): string {
     const phone = escapeLatex(personalInfo.phone || "");
     const email = personalInfo.email || "";
     
-    let contactParts: string[] = [];
+    const contactParts: string[] = [];
     if (location) contactParts.push(location);
     if (phone) contactParts.push(phone);
     if (email) {
         contactParts.push(`\\href{mailto:${email}}{\\underline{${escapeLatex(email)}}}`);
     }
     
-    let links = [];
+    const links = [];
     if (personalInfo.portfolio) {
         links.push(`\\href{${personalInfo.portfolio}}{\\underline{${escapeLatex(personalInfo.portfolio.replace(/^https?:\/\//, ""))}}}`);
     }
@@ -63,7 +104,7 @@ function generateHeading(personalInfo: ResumeData["personalInfo"]): string {
 function generateSummary(summary: string): string {
     if (!summary) return "";
     return `\\section{Summary}
-${escapeLatex(summary)}`;
+${parseFormatting(summary)}`;
 }
 
 function generateExperience(experiences: ResumeData["experiences"]): string {
@@ -83,7 +124,7 @@ function generateExperience(experiences: ResumeData["experiences"]): string {
             content += "      \\resumeItemListStart\n";
             for (const point of exp.bulletPoints) {
                 if (point.trim()) {
-                    content += `        \\resumeItem{${escapeLatex(point)}}\n`;
+                    content += `        \\resumeItem{${parseFormatting(point)}}\n`;
                 }
             }
             content += "      \\resumeItemListEnd\n";
@@ -97,7 +138,7 @@ function generateExperience(experiences: ResumeData["experiences"]): string {
 function generateSkills(skills: ResumeData["skills"]): string {
     if (!skills || skills.length === 0) return "";
     
-    let skillLines: string[] = [];
+    const skillLines: string[] = [];
     
     for (const skill of skills) {
         if (skill.category && skill.skills && skill.skills.length > 0) {
@@ -133,7 +174,7 @@ function generateProjects(projects: ResumeData["projects"]): string {
             content += "          \\resumeItemListStart\n";
             for (const point of project.bulletPoints) {
                 if (point.trim()) {
-                    content += `            \\resumeItem{${escapeLatex(point)}}\n`;
+                    content += `            \\resumeItem{${parseFormatting(point)}}\n`;
                 }
             }
             content += "          \\resumeItemListEnd\n";
@@ -162,7 +203,7 @@ function generateEducation(education: ResumeData["education"]): string {
             content += "      \\item\n        \\resumeItemListStart\n";
             for (const achievement of edu.achievements) {
                 if (achievement.trim()) {
-                    content += `            \\resumeItem{\\emph{${escapeLatex(achievement)}}}\n`;
+                    content += `            \\resumeItem{\\emph{${parseFormatting(achievement)}}}\n`;
                 }
             }
             content += "        \\resumeItemListEnd\n";
@@ -182,17 +223,17 @@ function generateCustomSections(customSections: ResumeData["customSections"]): s
     for (const section of customSections) {
         const title = escapeLatex(section.title || "");
         content += `\\section{${title}}\n`;
-        content += "  \\resumeSubHeadingListStart\n";
+        content += "  \\resumeItemListStart\n";
         
         if (section.items && section.items.length > 0) {
             for (const item of section.items) {
                 if (item.content && item.content.trim()) {
-                    content += `    \\item\n      \\resumeItem{${escapeLatex(item.content)}}\n`;
+                    content += `      \\resumeItem{${parseFormatting(item.content)}}\n`;
                 }
             }
         }
         
-        content += "  \\resumeSubHeadingListEnd\n";
+        content += "  \\resumeItemListEnd\n";
     }
     
     return content;

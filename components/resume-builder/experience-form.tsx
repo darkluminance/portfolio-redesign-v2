@@ -3,7 +3,7 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { FormattableTextarea } from "@/components/resume-builder/formattable-textarea";
 import { WorkExperience, generateId } from "@/lib/resume-types";
 import { Plus, Trash2, GripVertical } from "lucide-react";
 
@@ -169,7 +169,7 @@ export function ExperienceForm({ experiences, onChange }: ExperienceFormProps) {
                             {exp.bulletPoints.map((bullet, bulletIndex) => (
                                 <div key={bulletIndex} className="flex items-start gap-2">
                                     <span className="mt-2 text-muted-foreground">•</span>
-                                    <Textarea
+                                    <FormattableTextarea
                                         placeholder="Describe your achievement or responsibility..."
                                         value={bullet}
                                         onChange={(e) =>

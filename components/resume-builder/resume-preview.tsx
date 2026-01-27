@@ -2,6 +2,7 @@
 
 import { ResumeData } from "@/lib/resume-types";
 import { LinkIcon } from "lucide-react";
+import { parseFormattedText } from "@/lib/format-preview";
 
 interface ResumePreviewProps {
     data: ResumeData;
@@ -73,7 +74,7 @@ export function ResumePreview({ data }: ResumePreviewProps) {
             {includeSummary && summary && (
                 <div className="mb-3">
                     <h2 className="resume-section-title">Summary</h2>
-                    <p className="text-[10pt]">{summary}</p>
+                    <p className="text-[10pt]">{parseFormattedText(summary)}</p>
                 </div>
             )}
 
@@ -97,7 +98,7 @@ export function ResumePreview({ data }: ResumePreviewProps) {
                                 {exp.bulletPoints.filter(bp => bp.trim()).length > 0 && (
                                     <ul className="list-disc ml-8 mt-1 space-y-0.5">
                                         {exp.bulletPoints.filter(bp => bp.trim()).map((bp, i) => (
-                                            <li key={i} className="text-[10pt]">{bp}</li>
+                                            <li key={i} className="text-[10pt]">{parseFormattedText(bp)}</li>
                                         ))}
                                     </ul>
                                 )}
@@ -146,7 +147,7 @@ export function ResumePreview({ data }: ResumePreviewProps) {
                                 {proj.bulletPoints.filter(bp => bp.trim()).length > 0 && (
                                     <ul className="list-disc ml-8 mt-1 space-y-0.5">
                                         {proj.bulletPoints.filter(bp => bp.trim()).map((bp, i) => (
-                                            <li key={i} className="text-[10pt]">{bp}</li>
+                                            <li key={i} className="text-[10pt]">{parseFormattedText(bp)}</li>
                                         ))}
                                     </ul>
                                 )}
@@ -176,7 +177,7 @@ export function ResumePreview({ data }: ResumePreviewProps) {
                                 {edu.achievements.filter(a => a.trim()).length > 0 && (
                                     <ul className="list-disc ml-8 mt-1 space-y-0.5">
                                         {edu.achievements.filter(a => a.trim()).map((achievement, i) => (
-                                            <li key={i} className="text-[10pt]">{achievement}</li>
+                                            <li key={i} className="text-[10pt]">{parseFormattedText(achievement)}</li>
                                         ))}
                                     </ul>
                                 )}
@@ -195,7 +196,7 @@ export function ResumePreview({ data }: ResumePreviewProps) {
                         </h2>
                         <ul className="list-disc ml-4 space-y-0.5">
                             {section.items.filter(item => item.content.trim()).map((item) => (
-                                <li key={item.id} className="text-[10pt]">{item.content}</li>
+                                <li key={item.id} className="text-[10pt]">{parseFormattedText(item.content)}</li>
                             ))}
                         </ul>
                     </div>

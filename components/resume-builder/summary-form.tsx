@@ -1,6 +1,6 @@
 "use client";
 
-import { Textarea } from "@/components/ui/textarea";
+import { FormattableTextarea } from "@/components/resume-builder/formattable-textarea";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Eye, EyeOff } from "lucide-react";
@@ -42,7 +42,7 @@ export function SummaryForm({
                     )}
                 </Button>
             </div>
-            <Textarea
+            <FormattableTextarea
                 id="summary"
                 placeholder="A brief summary of your professional background and goals..."
                 value={summary}

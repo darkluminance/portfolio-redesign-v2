@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { ResumeData } from "@/lib/resume-types";
-import { savePreset, getPresets, loadPreset, deletePreset, Preset } from "@/lib/preset-storage";
+import { savePreset, getPresets, loadPreset, deletePreset, findPresetByName, updatePreset, Preset } from "@/lib/preset-storage";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -35,6 +35,9 @@ export function PresetManager({ data, onLoad }: PresetManagerProps) {
     const [presetName, setPresetName] = useState("");
     const [selectedPresetId, setSelectedPresetId] = useState<string>("");
     const [isLoading, setIsLoading] = useState(false);
+    const [overwriteDialogOpen, setOverwriteDialogOpen] = useState(false);
+    const [existingPreset, setExistingPreset] = useState<Preset | null>(null);
+    const [isUpdateMode, setIsUpdateMode] = useState(false);
 
     useEffect(() => {
         setPresets(getPresets());
@@ -42,6 +45,14 @@ export function PresetManager({ data, onLoad }: PresetManagerProps) {
 
     const handleSave = () => {
         if (!presetName.trim()) return;
+        
+        const existing = findPresetByName(presetName.trim());
+        if (existing) {
+            setExistingPreset(existing);
+            setSaveDialogOpen(false);
+            setOverwriteDialogOpen(true);
+            return;
+        }
         
         setIsLoading(true);
         savePreset(presetName.trim(), data);
@@ -60,12 +71,42 @@ export function PresetManager({ data, onLoad }: PresetManagerProps) {
         }
     };
 
+    const handleUpdate = () => {
+        const preset = presets.find((p) => p.id === selectedPresetId);
+        if (!preset) return;
+        
+        setExistingPreset(preset);
+        setIsUpdateMode(true);
+        setOverwriteDialogOpen(true);
+    };
+
     const handleDelete = (id: string) => {
         deletePreset(id);
         setPresets(getPresets());
         if (selectedPresetId === id) {
             setSelectedPresetId("");
         }
+    };
+
+    const handleOverwriteConfirm = () => {
+        if (!existingPreset) return;
+        
+        setIsLoading(true);
+        updatePreset(existingPreset.id, data);
+        setPresets(getPresets());
+        setPresetName("");
+        setExistingPreset(null);
+        setOverwriteDialogOpen(false);
+        setIsLoading(false);
+        setIsUpdateMode(false);
+    };
+
+    const handleOverwriteCancel = () => {
+        setOverwriteDialogOpen(false);
+        if (!isUpdateMode) {
+            setSaveDialogOpen(true);
+        }
+        setIsUpdateMode(false);
     };
 
     return (
@@ -77,7 +118,7 @@ export function PresetManager({ data, onLoad }: PresetManagerProps) {
                 className="flex-shrink-0"
             >
                 <Save className="h-3.5 w-3.5 sm:mr-1.5" />
-                <span className="hidden sm:inline">Save Preset</span>
+                <span className="hidden sm:inline">Save as new preset</span>
                 <span className="sm:hidden">Save</span>
             </Button>
 
@@ -104,6 +145,14 @@ export function PresetManager({ data, onLoad }: PresetManagerProps) {
                                 className="flex-shrink-0"
                             >
                                 Load
+                            </Button>
+                            <Button
+                                onClick={handleUpdate}
+                                variant="outline"
+                                size="sm"
+                                className="flex-shrink-0"
+                            >
+                                Update
                             </Button>
                             <Button
                                 onClick={() => handleDelete(selectedPresetId)}
@@ -153,6 +202,26 @@ export function PresetManager({ data, onLoad }: PresetManagerProps) {
                             ) : (
                                 "Save"
                             )}
+                        </AlertDialogAction>
+                    </AlertDialogFooter>
+                </AlertDialogContent>
+            </AlertDialog>
+
+            <AlertDialog open={overwriteDialogOpen} onOpenChange={setOverwriteDialogOpen}>
+                <AlertDialogContent>
+                    <AlertDialogHeader>
+                        <AlertDialogTitle>Overwrite Preset?</AlertDialogTitle>
+                        <AlertDialogDescription>
+                            {isUpdateMode 
+                                ? `Are you sure you want to overwrite changes to "${existingPreset?.name}"?`
+                                : `A preset named "${existingPreset?.name}" already exists. Do you want to overwrite it?`
+                            }
+                        </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                        <AlertDialogCancel onClick={handleOverwriteCancel}>Cancel</AlertDialogCancel>
+                        <AlertDialogAction onClick={handleOverwriteConfirm}>
+                            Overwrite
                         </AlertDialogAction>
                     </AlertDialogFooter>
                 </AlertDialogContent>
