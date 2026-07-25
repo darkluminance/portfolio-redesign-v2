@@ -11,10 +11,23 @@ export interface WorkExperience {
 export const workExperiences: WorkExperience[] = [
   {
     company: "Enosis Solutions",
+    position: "Senior Software Engineer",
+    location: "Dhaka, Bangladesh",
+    startDate: "March 2026",
+    endDate: "Present",
+    highlights: [
+      "Designed and implemented auditable and scalable data pipelines for large-scale data processing and analytics",
+      "Implementing a RAG (Retrieval-Augmented Generation) system for a large-scale knowledge base, enabling efficient information retrieval and generation of contextually relevant responses", 
+      "Creating vector embeddings for the knowledge base using open source embedding models, and integrated them with a vector database for efficient retrieval",
+    ],
+    stacks: ["Python", "Django", "React", "AWS", "Tailwind", "Qdrant", "PGVector", "LangChain", "RAG"]
+  },
+  {
+    company: "Enosis Solutions",
     position: "Software Engineer II",
     location: "Dhaka, Bangladesh",
     startDate: "March 2025",
-    endDate: "Present",
+    endDate: "Feb 2026",
     highlights: [
       "Architected and optimized movement and alignment systems for a multi-platform (AR/VR/Web) 3D SaaS AR/VR product using Three.js and Node.js",
       "Enhanced controller-picking and rendering algorithms, improving performance by 5x across VR/AR modes",

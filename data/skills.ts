@@ -44,13 +44,24 @@ export const skills: SkillCategory[] = [
     ]
   },
   {
+    category: "ML/AI",
+    skills: [
+      "Qdrant",
+      "PGVector",
+      "LangChain",
+      "RAG (Retrieval-Augmented Generation)",
+      "Vector Embeddings",
+      "Open Source Embedding Models"
+    ]
+  },
+  {
     category: "Database",
     skills: [
       "PostgreSQL",
       "MySQL",
       "MongoDB",
       "Firebase",
-      "Prisma"
+      "Prisma",
     ]
   },
   {

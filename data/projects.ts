@@ -2,23 +2,6 @@ import { Project } from "@/lib/project-types";
 
 export const projects: Project[] = [
   {
-    name: "DSA Visualizer",
-    slug: "dsav",
-    category: "Desktop Application",
-    year: 2020,
-    description: "A program that visualizes a few data structures and some common sorting and graph algorithms with vibrant colors. It also includes a maze generator and solver.",
-    githubURL: "https://github.com/darkluminance/Data-Structure-and-Algorithm-Visualizer",
-    demoURL: "",
-    stacks: ["Java"],
-    image: {
-      version: 1696683378,
-      public_id: "projects/dsav",
-      format: "png",
-      width: 895,
-      height: 895
-    }
-  },
-  {
     name: "Maze Visualizer",
     slug: "maze_generator",
     category: "Web Development",
@@ -81,23 +64,6 @@ export const projects: Project[] = [
     image: {
       version: 1737386347,
       public_id: "projects/trackgrad",
-      format: "png",
-      width: 1080,
-      height: 1080
-    }
-  },
-  {
-    name: "URL shortener",
-    slug: "url_shortener",
-    category: "Web Development",
-    year: 2024,
-    description: "A simple URL shortener application that converts current timestamp into hexa code to generate temporary short URLs",
-    githubURL: "https://github.com/darkluminance/url-shortener",
-    demoURL: "https://smol-url.vercel.app/",
-    stacks: ["NextJS", "MongoDB"],
-    image: {
-      version: 1733075959,
-      public_id: "projects/url_shortener",
       format: "png",
       width: 1080,
       height: 1080
