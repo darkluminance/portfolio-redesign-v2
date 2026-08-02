@@ -20,7 +20,7 @@ export const workExperiences: WorkExperience[] = [
       "Implementing a RAG (Retrieval-Augmented Generation) system for a large-scale knowledge base, enabling efficient information retrieval and generation of contextually relevant responses", 
       "Creating vector embeddings for the knowledge base using open source embedding models, and integrated them with a vector database for efficient retrieval",
     ],
-    stacks: ["Python", "Django", "React", "AWS", "Tailwind", "Qdrant", "PGVector", "LangChain", "RAG"]
+    stacks: ["Python", "Django", "React", "AWS", "Tailwind", "Qdrant", "PageIndex", "PGVector", "LangChain", "RAG"]
   },
   {
     company: "Enosis Solutions",

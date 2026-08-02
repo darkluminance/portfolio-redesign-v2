@@ -41,6 +41,9 @@ export function PresetManager({ data, onLoad }: PresetManagerProps) {
 
     useEffect(() => {
         setPresets(getPresets());
+        const refresh = () => setPresets(getPresets());
+        window.addEventListener("resume-presets-updated", refresh);
+        return () => window.removeEventListener("resume-presets-updated", refresh);
     }, []);
 
     const handleSave = () => {

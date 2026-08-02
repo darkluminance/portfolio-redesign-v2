@@ -12,6 +12,7 @@ import { CustomSectionForm } from "@/components/resume-builder/custom-section-fo
 import { ResumePreview } from "@/components/resume-builder/resume-preview";
 import { DownloadButton } from "@/components/resume-builder/download-button";
 import { PresetManager } from "@/components/resume-builder/preset-manager";
+import { JsonManager } from "@/components/resume-builder/json-manager";
 import {
     ChevronDown,
     ChevronRight,
@@ -71,6 +72,10 @@ export default function ResumeBuilderPage() {
                     <h1 className="text-xl font-semibold">Resume Builder</h1>
                 </div>
                 <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                    <JsonManager
+                        data={resumeData}
+                        onImport={(data) => setResumeData(data)}
+                    />
                     <PresetManager
                         data={resumeData}
                         onLoad={(data) => setResumeData(data)}
