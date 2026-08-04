@@ -39,11 +39,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       <div className="flex flex-col gap-8">
         <div>
-          <h1 className="text-2xl font-bold uppercase">
+          <h1 className="font-serif text-[32px] leading-tight md:text-[42px]">
             {project.name}
           </h1>
-          <p className="text-muted-foreground text-sm mt-1">
-            {project.category} • {project.year}
+          <p className="mt-2 font-label text-[11.5px] uppercase tracking-[0.06em] text-label">
+            {project.category} — {project.year}
           </p>
         </div>
 

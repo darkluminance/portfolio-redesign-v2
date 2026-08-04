@@ -9,7 +9,14 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-nav-active: var(--nav-active);
-  --font-sans: var(--font-sans);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-line: var(--line);
+  --color-label: var(--label);
+  --color-brand: var(--brand);
+  --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-libre-caslon);
+  --font-label: var(--font-space-mono);
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -50,23 +57,30 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.147 0.004 49.25);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.147 0.004 49.25);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.147 0.004 49.25);
+  /* Design brand tokens (paper / ink aesthetic) */
+  --paper: #f3f1ea;
+  --ink: #16150f;
+  --line: rgba(20, 18, 10, 0.14);
+  --label: #8b877a;
+  --brand: oklch(0.55 0.035 55);
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: #faf8f2;
+  --card-foreground: var(--ink);
+  --popover: #faf8f2;
+  --popover-foreground: var(--ink);
   --primary: oklch(0.216 0.006 56.043);
   --primary-foreground: oklch(0.985 0.001 106.423);
-  --secondary: oklch(0.97 0.001 106.424);
+  --secondary: oklch(0.94 0.004 80);
   --secondary-foreground: oklch(0.216 0.006 56.043);
-  --muted: oklch(0.97 0.001 106.424);
-  --muted-foreground: oklch(0.553 0.013 58.071);
-  --accent: oklch(0.97 0.001 106.424);
+  --muted: oklch(0.94 0.004 80);
+  --muted-foreground: var(--label);
+  --accent: oklch(0.94 0.004 80);
   --accent-foreground: oklch(0.216 0.006 56.043);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.923 0.003 48.717);
-  --input: oklch(0.923 0.003 48.717);
+  --border: var(--line);
+  --input: var(--line);
   --ring: oklch(0.709 0.01 56.259);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -92,22 +106,29 @@
 }
 
 .dark {
-  --background: oklch(0.147 0.004 49.25);
-  --foreground: oklch(0.985 0.001 106.423);
-  --card: oklch(0.216 0.006 56.043);
-  --card-foreground: oklch(0.985 0.001 106.423);
-  --popover: oklch(0.216 0.006 56.043);
-  --popover-foreground: oklch(0.985 0.001 106.423);
+  /* Dark "paper" variant (not in handoff — complementary) */
+  --paper: #16150f;
+  --ink: #f0eee7;
+  --line: rgba(240, 238, 231, 0.14);
+  --label: #9a978c;
+  --brand: oklch(0.7 0.04 60);
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: #1e1c15;
+  --card-foreground: var(--ink);
+  --popover: #1e1c15;
+  --popover-foreground: var(--ink);
   --primary: oklch(0.923 0.003 48.717);
   --primary-foreground: oklch(0.216 0.006 56.043);
-  --secondary: oklch(0.268 0.007 34.298);
+  --secondary: oklch(0.28 0.006 60);
   --secondary-foreground: oklch(0.985 0.001 106.423);
-  --muted: oklch(0.268 0.007 34.298);
-  --muted-foreground: oklch(0.709 0.01 56.259);
-  --accent: oklch(0.268 0.007 34.298);
+  --muted: oklch(0.28 0.006 60);
+  --muted-foreground: var(--label);
+  --accent: oklch(0.28 0.006 60);
   --accent-foreground: oklch(0.985 0.001 106.423);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
+  --border: var(--line);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.553 0.013 58.071);
   --chart-1: oklch(0.488 0.243 264.376);
@@ -132,7 +153,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
 }
 
@@ -140,4 +161,70 @@
   .resume-section-title {
     @apply text-sm uppercase mb-1 border-b border-black;
   }
+
+  /* Mono eyebrow / meta label used across the redesigned pages */
+  .klabel {
+    font-family: var(--font-label), monospace;
+    font-size: 10.5px;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--label);
+  }
+}
+
+@layer utilities {
+  /* Site links tint to the brand accent on hover (portfolio chrome) */
+  .link-brand {
+    transition: color 0.2s;
+  }
+  .link-brand:hover {
+    color: var(--brand);
+  }
+}
+
+/* --- Home: hover background line-icons --- */
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, calc(-50% - 14px)) scale(1);
+  }
+}
+
+/* --- Home: signature-reveal loader --- */
+@keyframes sigWipe {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+  12% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes ulDraw {
+  to {
+    width: 220px;
+  }
+}
+@keyframes ldOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.ld-run .ld-sig-img {
+  animation: sigWipe 1.4s cubic-bezier(0.7, 0, 0.2, 1) 0.2s forwards;
+}
+.ld-run .ld-uline {
+  animation: ulDraw 0.7s cubic-bezier(0.6, 0, 0.2, 1) 1.25s forwards;
+}
+.ld-run {
+  animation: ldOut 0.9s cubic-bezier(0.65, 0, 0.2, 1) 2.15s forwards;
 }

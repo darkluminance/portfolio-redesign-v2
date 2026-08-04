@@ -71,8 +71,15 @@ export default async function DigitalArtsPage() {
 
   return (
     <div className="md:py-8">
-      <h1 className="text-3xl font-bold mb-8">Digital Arts</h1>
-      <MasonryGallery images={images} columnClasses={getMasonryColumns({ sm: 1, md: 2, lg: 2 })} />
+      <header className="pb-2 pt-14 md:pt-20">
+        <div className="klabel mb-[22px]">Occasional experiments</div>
+        <h1 className="font-serif text-[46px] leading-[0.95] md:text-[64px]">
+          Digital Arts
+        </h1>
+      </header>
+      <div className="pt-12">
+        <MasonryGallery images={images} columnClasses={getMasonryColumns({ sm: 1, md: 2, lg: 2 })} withCaptions />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,168 @@
+{
+  "personalInfo": {
+    "name": "Raiyan Abrar",
+    "email": "ryeofficial13@gmail.com",
+    "phone": "",
+    "location": "Dhaka, Bangladesh",
+    "github": "https://github.com/darkluminance",
+    "linkedin": "",
+    "portfolio": "https://raiyanabrar.netlify.app"
+  },
+  "includeSummary": true,
+  "summary": "Senior Software Engineer with experience building scalable data pipelines, RAG systems, and multi-platform 3D AR/VR products. Skilled across full-stack web development, backend microservices, and ML/AI tooling.",
+  "experiences": [
+    {
+      "id": "expenos01",
+      "company": "Enosis Solutions",
+      "title": "Senior Software Engineer",
+      "location": "Dhaka, Bangladesh",
+      "startDate": "March 2026",
+      "endDate": "Present",
+      "bulletPoints": [
+        "Designed and implemented auditable and scalable data pipelines for large-scale data processing and analytics",
+        "Implementing a RAG (Retrieval-Augmented Generation) system for a large-scale knowledge base, enabling efficient information retrieval and generation of contextually relevant responses",
+        "Creating vector embeddings for the knowledge base using open source embedding models, and integrated them with a vector database for efficient retrieval"
+      ]
+    },
+    {
+      "id": "expenos02",
+      "company": "Enosis Solutions",
+      "title": "Software Engineer II",
+      "location": "Dhaka, Bangladesh",
+      "startDate": "March 2025",
+      "endDate": "Feb 2026",
+      "bulletPoints": [
+        "Architected and optimized movement and alignment systems for a multi-platform (AR/VR/Web) 3D SaaS AR/VR product using Three.js and Node.js",
+        "Enhanced controller-picking and rendering algorithms, improving performance by 5x across VR/AR modes",
+        "Contributed to a Python (Django)-React-based dental management application, focusing on logging, deployment, code cleaning, and feature development"
+      ]
+    },
+    {
+      "id": "expenos03",
+      "company": "Enosis Solutions",
+      "title": "Software Engineer I",
+      "location": "Dhaka, Bangladesh",
+      "startDate": "Feb 2024",
+      "endDate": "Feb 2025",
+      "bulletPoints": [
+        "Built and maintained an interactive 3D AR/VR application using Vue and Node.js",
+        "Refactored drag-and-drop movement logic, boosting efficiency by 15% across VR and non-VR environments",
+        "Improved 3D interaction efficiency by refactoring move/rotate features with scalable architecture",
+        "Modularized core motion systems to improve scalability and readability, aligning with design patterns and SOLID principles"
+      ]
+    },
+    {
+      "id": "expreddot1",
+      "company": "Reddot Digital Ltd.",
+      "title": "Software Engineer",
+      "location": "Dhaka, Bangladesh",
+      "startDate": "March 2023",
+      "endDate": "Jan 2024",
+      "bulletPoints": [
+        "Developed a microservice-based fintech reporting system with download options using Spring Boot and Nuxt.js, enabling real-time insights into transactions, balances, and account activities",
+        "Designed APIs and data models enabling real-time financial reporting and insights for thousands of users",
+        "Recognized as the Star Developer (Q3 2023) for outstanding contributions to fintech solutions",
+        "Worked cross-functionally in agile teams, participating in design discussions, QA, and release cycles"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "sklang01",
+      "category": "Languages",
+      "skills": ["C", "C++", "Python", "Java", "HTML", "CSS", "JavaScript", "TypeScript", "SQL"]
+    },
+    {
+      "id": "skfront01",
+      "category": "Frontend",
+      "skills": ["React", "Next.js", "Vue", "Nuxt.js", "SASS", "Tailwind CSS", "Bootstrap", "Material UI", "Three.js"]
+    },
+    {
+      "id": "skback01",
+      "category": "Backend",
+      "skills": ["Node.js", "Express.js", "Django", "Spring Boot", "REST API", "Microservices"]
+    },
+    {
+      "id": "skmlai01",
+      "category": "ML/AI",
+      "skills": ["Qdrant", "PGVector", "LangChain", "RAG (Retrieval-Augmented Generation)", "Vector Embeddings", "Open Source Embedding Models"]
+    },
+    {
+      "id": "skdb0001",
+      "category": "Database",
+      "skills": ["PostgreSQL", "MySQL", "MongoDB", "Firebase", "Prisma"]
+    },
+    {
+      "id": "sktool01",
+      "category": "Tools",
+      "skills": ["Git", "GitHub", "GitLab", "Bitbucket", "Docker", "VS Code", "Cursor", "Figma", "Postman", "Linux", "AWS", "Vercel", "Netlify", "Jira", "Confluence", "Slack", "Notion", "n8n"]
+    },
+    {
+      "id": "skprac01",
+      "category": "Practices",
+      "skills": ["Agile Development", "Scrum", "Test-Driven Development", "CI/CD", "Code Review", "Design Patterns", "SOLID Principles", "Clean Code", "Responsive Design", "Performance Optimization"]
+    },
+    {
+      "id": "sksoft01",
+      "category": "Soft Skills",
+      "skills": ["Problem Solving", "Team Collaboration", "Communication", "Leadership", "Time Management", "Adaptability", "Critical Thinking", "Fast Learner", "Mentoring", "Project Management"]
+    }
+  ],
+  "projects": [
+    {
+      "id": "projmaze01",
+      "name": "Maze Visualizer",
+      "link": "https://projects-rye-mazegenerator.vercel.app",
+      "technologies": "NextJS",
+      "bulletPoints": [
+        "A web-application that allows users to manually or automatically generate mazes and visualize solving, with ability to download the produced maze"
+      ]
+    },
+    {
+      "id": "projresume1",
+      "name": "Resume Builder",
+      "link": "https://raiyanabrar.netlify.app/resume-builder",
+      "technologies": "NextJS, TypeScript, TailwindCSS, Shadcn UI",
+      "bulletPoints": [
+        "A web application that allows users to build professional resumes with customizable sections including personal information, work experience, skills, projects, education, and custom sections. Features real-time preview and PDF export via LaTeX compilation."
+      ]
+    },
+    {
+      "id": "projdsa001",
+      "name": "Data Structures and Algorithm Visualizer",
+      "link": "https://raiyanabrar-dsalgo.netlify.app",
+      "technologies": "React, TypeScript, TailwindCSS, Shadcn UI",
+      "bulletPoints": [
+        "An interactive web application for visualizing common data structures and algorithms. Built with React, TypeScript, and modern web technologies to help students and developers understand how algorithms work through step-by-step animations."
+      ]
+    },
+    {
+      "id": "projtrack1",
+      "name": "TrackGrad",
+      "link": "https://github.com/darkluminance/higher-studies-application-tracker",
+      "technologies": "Solid.JS, Go, PostgreSQL, Docker, AWS",
+      "bulletPoints": [
+        "A management tool that allows users to track their higher studies application journey, with a middleware to prevent unauthorized API access, and a mail notification service to notify users of important events via mail. It is deployed in an AWS EC2 instance hosted using Docker."
+      ]
+    }
+  ],
+  "education": [],
+  "customSections": [
+    {
+      "id": "csgames001",
+      "title": "Favorite Games",
+      "items": [
+        { "id": "gamefav01", "content": "Clair Obscur: Expedition 33 (The GOAT)" },
+        { "id": "gamefav02", "content": "Ghost of Tsushima" },
+        { "id": "gamefav03", "content": "Pokemon: Legends Arceus" },
+        { "id": "gamefav04", "content": "Super Hexagon" },
+        { "id": "gamefav05", "content": "Spiderman Remastered" },
+        { "id": "gamefav06", "content": "Legends of Zelda: Tears of the Kingdom" },
+        { "id": "gamefav07", "content": "NieR: Automata" },
+        { "id": "gamefav08", "content": "FIFA 14" },
+        { "id": "gamefav09", "content": "Dragon Ball Z: Buu's Fury" },
+        { "id": "gamefav10", "content": "Pokemon Emerald" }
+      ]
+    }
+  ]
+}

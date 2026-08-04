@@ -70,10 +70,28 @@ export default async function GalleryPage() {
   }));
 
   return (
-    <div className="md:py-8">
-      <h1 className="text-3xl font-bold mb-8">My Photographs</h1>
-      <MasonryGallery images={images} columnClasses={getMasonryColumns({ sm: 1, md: 2, lg: 3 })} />
-    </div>
+    <>
+      <header className="flex flex-col items-start justify-between gap-8 pb-2 pt-14 md:flex-row md:items-end md:pt-[88px]">
+        <div>
+          <div className="klabel mb-[22px]">A running visual diary</div>
+          <h1 className="font-serif text-[46px] leading-[0.95] md:text-[72px]">
+            Gallery
+          </h1>
+        </div>
+        <p className="max-w-[340px] text-[15px] leading-[1.8] text-ink/85">
+          A running collection of travel, mountains and moments — framed as they
+          happened.
+        </p>
+      </header>
+
+      <div className="pt-14">
+        <MasonryGallery
+          images={images}
+          columnClasses={getMasonryColumns({ sm: 1, md: 2, lg: 3 })}
+          withCaptions
+        />
+      </div>
+    </>
   );
 }
 
