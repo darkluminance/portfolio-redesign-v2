@@ -43,15 +43,15 @@ export function Intro() {
           <span
             key={name}
             className={cn(
-              "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500",
+              "absolute bottom-[6%] right-[4%] transition-[opacity,scale] duration-500",
               active === name
-                ? "opacity-100 [animation:floaty_6s_ease-in-out_infinite]"
+                ? "scale-100 opacity-100 [animation:floaty_6s_ease-in-out_infinite]"
                 : "scale-90 opacity-0"
             )}
           >
             <svg
               viewBox="0 0 24 24"
-              className="h-auto w-[84%] fill-none stroke-brand opacity-[0.22] [&_*]:[vector-effect:non-scaling-stroke] md:w-[min(680px,64vw)]"
+              className="h-auto w-[200px] fill-none stroke-brand opacity-[0.22] [&_*]:[vector-effect:non-scaling-stroke] md:w-[min(340px,28vw)]"
               strokeWidth={2}
               strokeLinecap="round"
               strokeLinejoin="round"

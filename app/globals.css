@@ -187,10 +187,10 @@
 @keyframes floaty {
   0%,
   100% {
-    transform: translate(-50%, -50%) scale(1);
+    transform: translateY(0);
   }
   50% {
-    transform: translate(-50%, calc(-50% - 14px)) scale(1);
+    transform: translateY(-14px);
   }
 }
 
